@@ -7,7 +7,7 @@ The container under this project is built  so that anyone can “pull” and ‘
 
 Since my school days, I used to play games on the desktop and developed interest in game development. In recent times, I am learning Dev-Sec-Ops and related concepts. Of-course, I am very new to dockerize the containers, especially the applications / games running on gpu, as POC I ‘given’ a try that resulted in this ‘project’.
 
-The pre-requsites to run 0ad game in conainer, the local host... 
+The prerequisites to run 0ad game in container, the local host... 
 
 First let us look into X server in linux systems….
 
