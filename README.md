@@ -22,21 +22,21 @@ As it lists in the terminal “/usr/lib/xorg/Xorg”  Xorg is an X-server runnin
  
 With defining environment variables of ‘DISPLAY’ and mounting sockets, the clients, especially in containers can connect / communicate with X-server running in localhost through display port. To know the display port in localhost enter command
 
-  echo $DISPLAY 
+		echo $DISPLAY 
 
 With security of linux systems and protocol to be specified, to connect X server the clients should be allowed by entering command in local host
 
-  xhost + 
+		xhost + 
 
 With which access control will be disabled and clients can connect to X-server from any host.
 
 TEST to run gui based application gimp - CASE  I ‘dockerfile’
 
-  FROM ubuntu
-  ENV DEBIAN_FRONTEND=noninteractive
-  RUN apt-get update && apt-get install gimp -y
-  ENV DISPLAY :0
-  CMD ["gimp"]
+		FROM ubuntu
+		ENV DEBIAN_FRONTEND=noninteractive
+		RUN apt-get update && apt-get install gimp -y
+		ENV DISPLAY :0
+		CMD ["gimp"]
 
 
-docker run --rm -it --name gimp -e DISPLAY=$DISPLAY -v /tmp/.X11.unix:/tmp/.X11.unix:ro gimp:0.1
+		docker run --rm -it --name gimp -e DISPLAY=$DISPLAY -v /tmp/.X11.unix:/tmp/.X11.unix:ro gimp:0.1
