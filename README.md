@@ -38,5 +38,19 @@ TEST to run gui based application gimp - CASE  I ‘dockerfile’
 		ENV DISPLAY :0
 		CMD ["gimp"]
 
+TEST to build the docker image using ‘docker build’ in local host enter command
 
-		docker run --rm -it --name gimp -e DISPLAY=$DISPLAY -v /tmp/.X11.unix:/tmp/.X11.unix:ro gimp:0.1
+		docker build . -t gimplocal:1.0
+			
+Above command will execute successfully with ‘dockerfile’ in Present Working Directory PWD, docker build can be done by providing a full path to Dockerfile. For that with full path to Dockerfile in local host enter  command
+
+		docker build -f ./Dockerfile . -t gimplocal:1.0
+			
+TEST run once the docker image build successfully by creating ‘container’ - using docker run, in local host enter command
+
+		docker run --rm -it --name gimplocal -e DISPLAY=$DISPLAY -v /tmp/.X11.unix:/tmp/.X11.unix:ro gimplocal:1.0
+		
+Explanation of arguments in docker run command 
+
+Second, let us look into GPU and supported drivers in linux systems….
+
